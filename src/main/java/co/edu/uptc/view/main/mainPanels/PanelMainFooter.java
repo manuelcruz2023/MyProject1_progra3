@@ -1,7 +1,6 @@
 package co.edu.uptc.view.main.mainPanels;
 
-import java.awt.BorderLayout;
-
+import java.awt.Dimension;
 import javax.swing.JPanel;
 import co.edu.uptc.globals.GlobalView;
 
@@ -15,7 +14,8 @@ public class PanelMainFooter extends JPanel{
     private void initPanel() {
         this.setBackground(GlobalView.FOOTER_BACKGROUND_COLOR);
         this.setForeground(GlobalView.FOOTER_TEXT_COLOR);
-        this.setLayout(new BorderLayout());
+        this.setLayout(null);
+        this.setPreferredSize(new Dimension(800, 200));
     }
 
     private void begin() {

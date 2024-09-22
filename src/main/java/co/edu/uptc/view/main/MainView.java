@@ -11,7 +11,6 @@ public class MainView extends JFrame{
     
     public MainView() {
         initFrame();
-        begin();
         createPanels();
     }
 

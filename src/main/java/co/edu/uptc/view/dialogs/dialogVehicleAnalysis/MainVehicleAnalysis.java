@@ -1,9 +1,5 @@
 package co.edu.uptc.view.dialogs.dialogVehicleAnalysis;
 
-import java.awt.Dimension;
-import java.awt.Panel;
-import java.awt.Toolkit;
-
 import javax.swing.JDialog;
 
 import co.edu.uptc.view.dialogs.dialogVehicleAnalysis.panelsVehicleAnalysis.VehicleAnalysisBody;

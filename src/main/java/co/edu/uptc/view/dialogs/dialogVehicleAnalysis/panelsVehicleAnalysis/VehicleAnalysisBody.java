@@ -3,6 +3,7 @@ package co.edu.uptc.view.dialogs.dialogVehicleAnalysis.panelsVehicleAnalysis;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.Insets;
 
 import javax.swing.JButton;
@@ -25,7 +26,7 @@ public class VehicleAnalysisBody extends JPanel{
     private void initComponents() {
         this.setSize(1200, 600);
         this.setBackground(GlobalView.BODY_BACKGROUND_COLOR);
-        this.setLayout(new GridBagLayout()); // Establece un GridBagLayout
+        this.setLayout(new GridLayout(0, 1));
     }
     
     public void createButtonQuantityByModel() {
@@ -39,7 +40,7 @@ public class VehicleAnalysisBody extends JPanel{
                 createLabelResult("oli");
             }
         });
-        this.add(button, gbc);
+        this.add(button);
     }
 
     public void createButtonQuantityByManufacturer() {
@@ -53,7 +54,7 @@ public class VehicleAnalysisBody extends JPanel{
                 createLabelResult("oli");
             }
         });
-        this.add(button, gbc);
+        this.add(button);
     }
 
     public void createButtonQuantityByElectricRange() {
@@ -67,7 +68,7 @@ public class VehicleAnalysisBody extends JPanel{
                 createLabelResult("oli");
             }
         });
-        this.add(button, gbc);
+        this.add(button);
     }
 
     public void createButtons() {
@@ -82,8 +83,8 @@ public class VehicleAnalysisBody extends JPanel{
         labelPanel.setPreferredSize(new Dimension(200, 200));
         gbc.gridx = 1;
         gbc.gridy = 0;
-        gbc.insets = new Insets(200,200,200,200); // 10 pixels of space on all sides
-        this.add(labelPanel, gbc);
+        gbc.insets = new Insets(100,100,100,100); // 10 pixels of space on all sides
+        this.add(labelPanel);
     }
 
     public JLabel createLabelResult(String result) {

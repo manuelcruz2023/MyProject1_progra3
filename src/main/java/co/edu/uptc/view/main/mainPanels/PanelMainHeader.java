@@ -38,9 +38,10 @@ public class PanelMainHeader extends JPanel{
 
     private void addTittle() {
         JLabel tittle = new JLabel("Electric Vehicle Population Data");
+        tittle.setHorizontalAlignment(JLabel.CENTER);
         tittle.setBounds(0, 0, 800, 200);   
         tittle.setForeground(getForeground());
-        tittle.setFont(new Font("Poster Pen JNL", Font.BOLD, 50));
+        tittle.setFont(new Font("Lato", Font.BOLD, 50));
         panelMainHeader.add(tittle, BorderLayout.CENTER);
     }
 }

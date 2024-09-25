@@ -3,7 +3,6 @@ package co.edu.uptc.view.dialogs.dialogVehicleAnalysis;
 import javax.swing.JDialog;
 
 import co.edu.uptc.view.dialogs.dialogVehicleAnalysis.panelsVehicleAnalysis.VehicleAnalysisBody;
-import co.edu.uptc.view.dialogs.dialogVehicleAnalysis.panelsVehicleAnalysis.VehicleAnalysisFooter;
 import co.edu.uptc.view.dialogs.dialogVehicleAnalysis.panelsVehicleAnalysis.VehicleAnalysisHeader;
 import co.edu.uptc.view.main.mainPanels.PanelMainBody;
 
@@ -39,14 +38,8 @@ public class MainVehicleAnalysis extends JDialog{
         this.add(body);
     }
 
-    private void CreateFooter (){
-        VehicleAnalysisFooter footer = new VehicleAnalysisFooter();
-        this.add(footer);
-    }
-
     private void createPanels() {
         CreateHeader();
         CreateBody();
-        CreateFooter();
     }
 }

@@ -4,7 +4,9 @@ import java.awt.Color;
 import java.awt.Font;
 
 public class GlobalView {
-    public static Color HEADER_BACKGROUND_COLOR = new Color(21, 52, 72);
+
+    public static Color MAIN_PANELS_BACKGROUND_COLOR = new Color(229, 217, 242);
+    public static Color HEADER_BACKGROUND_COLOR = new Color(229, 217, 242);
     public static Color HEADER_TEXT_COLOR = new Color(255, 255, 255);
 
     public static Color BODY_BACKGROUND_COLOR = new Color(197, 235, 170);

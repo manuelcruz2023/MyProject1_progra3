@@ -1,14 +1,16 @@
 package co.edu.uptc.view.main;
 
 import javax.swing.JFrame;
-
 import co.edu.uptc.view.main.mainPanels.PanelMainBody;
-import co.edu.uptc.view.main.mainPanels.PanelMainFooter;
 import co.edu.uptc.view.main.mainPanels.PanelMainHeader;
-import java.awt.BorderLayout;
+import co.edu.uptc.view.main.mainPanels.PanelMenu;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 
 public class MainView extends JFrame{
     
+    GridBagConstraints gbc = new GridBagConstraints();
+
     public MainView() {
         initFrame();
         createPanels();
@@ -17,7 +19,7 @@ public class MainView extends JFrame{
     private void initFrame() {
         setTitle("Main View");
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        this.setLayout(new BorderLayout());
+        this.setLayout(new GridBagLayout());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
@@ -27,22 +29,42 @@ public class MainView extends JFrame{
 
     private void createHeader() {
         PanelMainHeader panelMainHeader = new PanelMainHeader();
-        this.add(panelMainHeader, BorderLayout.NORTH);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 2;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weightx = 1.0;
+        gbc.insets = new java.awt.Insets(10, 10, 10, 10);
+        this.add(panelMainHeader, gbc);
     }
 
     private void createBody() {
         PanelMainBody panelMainBody = new PanelMainBody(this);
-        this.add(panelMainBody, BorderLayout.CENTER);
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        gbc.gridwidth = 1;
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.insets = new java.awt.Insets(10, 10, 10, 10);
+        this.add(panelMainBody, gbc);
     }
 
-    private void createFooter() {
-        PanelMainFooter panelMainFooter = new PanelMainFooter();
-        this.add(panelMainFooter, BorderLayout.SOUTH);
+    private void createPanel() {
+        PanelMenu panelMenu = new PanelMenu();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 1;
+        gbc.fill = GridBagConstraints.VERTICAL;
+        gbc.weightx = 0.0;
+        gbc.weighty = 1.0;
+        gbc.insets = new java.awt.Insets(10, 10, 10, 10);
+        this.add(panelMenu, gbc);
     }
 
     private void createPanels() {
         createHeader();
+        createPanel();
         createBody();
-        createFooter();
     }
 }

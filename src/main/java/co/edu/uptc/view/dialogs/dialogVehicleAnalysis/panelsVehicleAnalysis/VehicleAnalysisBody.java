@@ -19,8 +19,8 @@ public class VehicleAnalysisBody extends JPanel{
 
     public VehicleAnalysisBody() {
         initComponents();
-        createButtons();
-        createPanelResult();
+        //createButtons();
+        //createPanelResult();
     }
 
     private void initComponents() {

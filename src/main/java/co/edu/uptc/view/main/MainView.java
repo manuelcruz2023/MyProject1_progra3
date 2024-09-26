@@ -10,6 +10,8 @@ import java.awt.GridBagLayout;
 public class MainView extends JFrame{
     
     GridBagConstraints gbc = new GridBagConstraints();
+    public PanelMainBody panelMainBody;
+    
 
     public MainView() {
         initFrame();
@@ -39,7 +41,7 @@ public class MainView extends JFrame{
     }
 
     private void createBody() {
-        PanelMainBody panelMainBody = new PanelMainBody(this);
+        panelMainBody = new PanelMainBody(this);
         gbc.gridx = 1;
         gbc.gridy = 1;
         gbc.gridwidth = 1;
@@ -51,7 +53,7 @@ public class MainView extends JFrame{
     }
 
     private void createPanel() {
-        PanelMenu panelMenu = new PanelMenu();
+        PanelMenu panelMenu = new PanelMenu(this);
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.gridwidth = 1;

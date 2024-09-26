@@ -12,12 +12,15 @@ import java.awt.Component;
 import co.edu.uptc.globals.GlobalView;
 import co.edu.uptc.view.RoundedButton;
 import co.edu.uptc.view.RoundedPanel;
+import co.edu.uptc.view.main.MainView;
 
 public class PanelMenu extends JPanel {
 
     private RoundedPanel panelMenu;
+    public MainView mainView;
 
-    public PanelMenu() {
+    public PanelMenu(MainView mainView) {
+        this.mainView = mainView;
         initPanel();
         begin();
         createMenu();
@@ -49,6 +52,7 @@ public class PanelMenu extends JPanel {
         button.setForeground(Color.WHITE);
         button.setMaximumSize(new Dimension(180, 70));
         button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        button.addActionListener(e -> addVehicleButtons());
         panelMenu.add(button);
         panelMenu.add(Box.createRigidArea(new Dimension(0, 10)));
     }
@@ -78,5 +82,43 @@ public class PanelMenu extends JPanel {
         createVehicleButton();
         createGeographycalButton();
         createButtonClear();
+    }
+
+    private void ButtonVehicleCountByModel() {
+        RoundedButton button = new RoundedButton("<html>Cantidad de vehículos por modelo</html>");
+        button.setFont(new Font("Arial", Font.PLAIN, 15));
+        button.setBackground(GlobalView.BUTTON_BACKGROUND_COLOR);
+        button.setForeground(Color.WHITE);
+        button.setPreferredSize(new Dimension(200, 100));
+        button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        this.mainView.panelMainBody.panelMainBody.add(button);
+    }
+
+    private void ButtonVehicleCountByManufacturer() {
+        RoundedButton button = new RoundedButton("<html>Cantidad de vehículos por fabricante</html>");
+        button.setFont(new Font("Arial", Font.PLAIN, 15));
+        button.setBackground(GlobalView.BUTTON_BACKGROUND_COLOR);
+        button.setForeground(Color.WHITE);
+        button.setPreferredSize(new Dimension(200, 100));
+        button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        this.mainView.panelMainBody.panelMainBody.add(button);
+    }
+
+    private void ButtonVehicleCountByElectricRange() {
+        RoundedButton button = new RoundedButton("<html>Cantidad de vehículos por rango eléctrico</html>");
+        button.setFont(new Font("Arial", Font.PLAIN, 15));
+        button.setBackground(GlobalView.BUTTON_BACKGROUND_COLOR);
+        button.setForeground(Color.WHITE);
+        button.setPreferredSize(new Dimension(200, 100));
+        button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        this.mainView.panelMainBody.panelMainBody.add(button);
+    }
+
+    private void addVehicleButtons() {
+        ButtonVehicleCountByModel();
+        ButtonVehicleCountByManufacturer();
+        ButtonVehicleCountByElectricRange();
+        this.mainView.panelMainBody.panelMainBody.repaint();
+        this.mainView.panelMainBody.panelMainBody.revalidate();
     }
 }
